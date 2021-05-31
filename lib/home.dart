@@ -8,7 +8,7 @@ class HomeCalendar extends StatefulWidget {
 }
 
 class _HomeCalendarState extends State<HomeCalendar> {
-  Map<DateTime, List<Event>> selectedEvents;
+  late Map<DateTime, List<Event>> selectedEvents;
   CalendarFormat format = CalendarFormat.month;
   DateTime selectedDay = DateTime.now();
   DateTime focusedDay = DateTime.now();
@@ -92,7 +92,7 @@ class _HomeCalendarState extends State<HomeCalendar> {
             headerStyle: HeaderStyle(
                 formatButtonVisible: true,
                 titleCentered: true,
-                formatButtonShowsNext: false,
+                formatButtonShowsNext: true,
                 formatButtonDecoration: BoxDecoration()),
           ),
           ..._getEventsfromDay(selectedDay).map(
